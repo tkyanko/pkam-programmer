@@ -11,8 +11,11 @@ def parse():
 
     for child in root:
         jans[child.attrib['name']] = child
+        relations[child.attrib['name']] = \
+          [name.attrib['name'] for name in child.findall("related")]
 
     print(jans)
+    print(relations)
 
 
 if __name__ == '__main__':
