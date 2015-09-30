@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <network name="Python">
   <jan name="Source Control" type="catagory">
-    <related name="Python" />
     <related name="git" />
   </jan>
 
