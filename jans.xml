@@ -1,15 +1,12 @@
-<network>
-  <jan name="Python" type="root">
-    <related>"Sourse Control"</related>
-  </jan>
-
+<?xml version="1.0"?>
+<network name="Python">
   <jan name="Source Control" type="catagory">
-    <related>"Python"</related>
-    <related>"git"</related>
+    <related name="Python" />
+    <related name="git" />
   </jan>
 
   <jan name="git" type="url">
     <value>"https://git-scm.com/"</value>
-    <related>"Source Control"</related>
+    <related name="Source Control" />
   </jan>
 </network>
