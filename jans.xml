@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <network name="Python">
-  <jan name="Source Control" type="catagory">
+  <jan name="Source Control" catagory="catagory">
+    <value>Info about versioning control systems</value>
     <related name="git" />
   </jan>
 
-  <jan name="git" type="url">
-    <value>"https://git-scm.com/"</value>
+  <jan name="git" catagory="url">
+    <value>https://git-scm.com/</value>
     <related name="Source Control" />
   </jan>
 </network>
