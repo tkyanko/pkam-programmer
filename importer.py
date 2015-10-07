@@ -5,7 +5,7 @@ from jan import Jan
 
 def build_network(input_file):
     """
-    Reads the input file and builds a network of the JANS and their
+    Read the input file and build a network of the JANS and their
     relations.
     """
     tree = ElementTree.parse(input_file)
@@ -21,7 +21,7 @@ def build_network(input_file):
 
 def print_network(network):
     """
-    Prints the network of Jans to the terminal.
+    Print the network of Jans to the terminal.
     """
     for jan in network.items():
         print(jan[1])
