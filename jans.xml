@@ -9,4 +9,21 @@
     <value>https://git-scm.com/</value>
     <related name="Source Control" />
   </jan>
+
+  <jan name="commands" catagory="catagory">
+    <value>git commands</value>
+    <related name="git" />
+    <related name="commit" />
+    <related name="push" />
+  </jan>
+
+  <jan name="commit" catagory="url">
+    <value>https://git-scm.com/docs/git-commit</value>
+    <related name="commands" />
+  </jan>
+
+  <jan name="push" catagory="url">
+    <value>https://git-scm.com/docs/git-push</value>
+    <related name="commands" />
+  </jan>
 </network>

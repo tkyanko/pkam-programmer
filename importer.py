@@ -2,31 +2,31 @@ import xml.etree.ElementTree as ElementTree
 
 from jan import Jan
 
-INPUT_FILE = 'jans.xml'
 
-jans = dict()
-
-
-def build_network():
+def build_network(input_file):
     """
-    Reads the XML file and fills the dictionaries with the JANS and their
+    Reads the input file and builds a network of the JANS and their
     relations.
     """
-    tree = ElementTree.parse(INPUT_FILE)
+    tree = ElementTree.parse(input_file)
     root = tree.getroot()
+    jans = dict()
 
     for child in root:
         new_jan = Jan(child.attrib['name'], child.attrib['catagory'], child.find('value').text, [name.attrib['name'] for name in child.findall("related")])
         jans[new_jan.name] = new_jan
 
+    return jans
 
-def print_jans():
+
+def print_network(network):
     """
     Prints the network of Jans to the terminal.
     """
-    for jan in jans.items():
+    for jan in network.items():
         print(jan[1])
 
 
 if __name__ == '__main__':
     build_network()
+    print_jans()
