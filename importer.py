@@ -1,3 +1,4 @@
+import networkx as nx
 import xml.etree.ElementTree as ElementTree
 
 from jan import Jan
@@ -5,18 +6,28 @@ from jan import Jan
 
 def build_network(input_file):
     """
-    Read the input file and build a network of the JANS and their
+    Read the input file and build a network and dict of the JANS and their
     relations.
     """
     tree = ElementTree.parse(input_file)
     root = tree.getroot()
-    jans = dict()
+    jan_graph = nx.Graph()
+    jan_dict = dict()
 
     for child in root:
         new_jan = Jan(child.attrib['name'], child.attrib['catagory'], child.find('value').text, [name.attrib['name'] for name in child.findall("related")])
-        jans[new_jan.name] = new_jan
+        jan_dict[new_jan.name] = new_jan
 
-    return jans
+    #Adding Jans as nodes
+    for name in jan_dict.keys():
+        jan_graph.add_node(name)
+        jan_graph[name]['name'] = name
+
+    for jan in jan_dict.values():
+        for related in jan.relations:
+            jan_graph.add_edge(jan.name, related)
+
+    return jan_graph, jan_dict
 
 
 def print_network(network):

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
-
+<!--http://bl.ocks.org/mbostock/950642-->
 .link {
   stroke: #ccc;
 }
@@ -48,12 +48,12 @@ d3.json("force.json", function(error, json) {
       .attr("class", "node")
       .call(force.drag);
 
-  node.append("image")
-      .attr("xlink:href", "https://github.com/favicon.ico")
-      .attr("x", -8)
-      .attr("y", -8)
-      .attr("width", 16)
-      .attr("height", 16);
+      node.append("image")
+          .attr("xlink:href", "https://github.com/favicon.ico")
+          .attr("x", -8)
+          .attr("y", -8)
+          .attr("width", 16)
+          .attr("height", 16);
 
   node.append("text")
       .attr("dx", 12)

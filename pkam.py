@@ -6,8 +6,10 @@ network = dict()
 
 def pkam():
     global network
-    network = importer.build_network(JAN_NETWORK_FILE)
-    print(jan_finder('git'))
+    network, dictionary = importer.build_network(JAN_NETWORK_FILE)
+    print(network.nodes())
+    print(network['commands'])
+
 
 
 def jan_finder(context):
