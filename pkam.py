@@ -1,3 +1,4 @@
+import force
 import importer
 
 JAN_NETWORK_FILE = 'jans.xml'
@@ -8,7 +9,10 @@ def pkam():
     global network
     network, dictionary = importer.build_network(JAN_NETWORK_FILE)
     print(network.nodes())
-    print(network['commands'])
+    print(network.edges())
+
+
+    force.render_network(network)
 
 
 

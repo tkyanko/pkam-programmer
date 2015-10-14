@@ -1,5 +1,6 @@
 import networkx as nx
 import xml.etree.ElementTree as ElementTree
+import matplotlib.pyplot as plt
 
 from jan import Jan
 
@@ -21,7 +22,7 @@ def build_network(input_file):
     #Adding Jans as nodes
     for name in jan_dict.keys():
         jan_graph.add_node(name)
-        jan_graph[name]['name'] = name
+        jan_graph.node[name]['name'] = name
 
     for jan in jan_dict.values():
         for related in jan.relations:

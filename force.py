@@ -10,16 +10,12 @@ __author__ = """Aric Hagberg <aric.hagberg@gmail.com>"""
 import json
 import networkx as nx
 from networkx.readwrite import json_graph
+from networkx.relabel import convert_node_labels_to_integers
 import http_server
 
-def render_network():
-    G = nx.barbell_graph(6,3)
-    # this d3 example uses the name attribute for the mouse-hover value,
-    # so add a name to each node
-    for n in G:
-        G.node[n]['name'] = n
+def render_network(network):
     # write json formatted data
-    d = json_graph.node_link_data(G) # node-link format to serialize
+    d = json_graph.node_link_data(network) # node-link format to serialize
     # write json
     json.dump(d, open('force/force.json','w'))
     print('Wrote node-link JSON data to force/force.json')
