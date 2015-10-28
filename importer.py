@@ -27,6 +27,7 @@ def build_network(input_file):
     for jan in jan_dict.values():
         for related in jan.relations:
             jan_graph.add_edge(jan.name, related)
+        jan_graph.node[jan.name]['url'] = jan.value
 
     return jan_graph, jan_dict
 

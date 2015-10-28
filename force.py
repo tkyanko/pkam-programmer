@@ -12,13 +12,14 @@ import networkx as nx
 from networkx.readwrite import json_graph
 from networkx.relabel import convert_node_labels_to_integers
 import http_server
+import os
 
 def render_network(network):
     # write json formatted data
     d = json_graph.node_link_data(network) # node-link format to serialize
     # write json
+
     json.dump(d, open('force/force.json','w'))
-    print('Wrote node-link JSON data to force/force.json')
     # open URL in running web browser
-    http_server.load_url('force/force.html')
-    print('Or copy all files in force/ to webserver and load force/force.html')
+    fileName = os.path.join(os.path.dirname(__file__), 'force/force.html')
+    http_server.load_url(fileName)
