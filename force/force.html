@@ -51,7 +51,7 @@ d3.json("force.json", function(error, json) {
       .call(force.drag);
 
       node.append("image")
-          .attr("xlink:href", "https://github.com/favicon.ico")
+          .attr("xlink:href", function(d) { if (d.selected=="0") { return "https://github.com/favicon.ico"} else { return "https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png"} })
           .attr("x", -8)
           .attr("y", -8)
           .attr("width", 16)

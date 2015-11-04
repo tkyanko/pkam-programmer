@@ -3,6 +3,7 @@
   <jan name="Source Control" catagory="catagory">
     <value>Info about versioning control systems</value>
     <related name="git" />
+    <related name="Language" />
   </jan>
 
   <jan name="git" catagory="url">
@@ -25,5 +26,16 @@
   <jan name="push" catagory="url">
     <value>https://git-scm.com/docs/git-push</value>
     <related name="commands" />
+  </jan>
+
+  <jan name="Language" catagory="catagory">
+      <value>Python language</value>
+      <related name="Source Control" />
+      <related name="for loop" />
+  </jan>
+
+  <jan name="for loop" catagory="url">
+      <value>https://docs.python.org/3.5/reference/compound_stmts.html#for</value>
+      <related name="Langauge" />
   </jan>
 </network>

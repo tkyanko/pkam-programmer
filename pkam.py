@@ -11,7 +11,7 @@ network = dict()
 
 
 def context_refiner(raw_context):
-    x = re.search('\sfor\s', raw_context) for 
+    x = re.search('\sfor\s', raw_context)
     return x
 
 
@@ -19,7 +19,11 @@ def pkam():
     global network
     network, dictionary = importer.build_network(JAN_NETWORK_FILE)
 
-    print(context_refiner(sys.argv[1]))
+    x = context_refiner(sys.argv[1])
+    print(x)
+
+    if x != None:
+        network.node['for loop']['selected'] = '1' 
 
     force.render_network(network)
 
