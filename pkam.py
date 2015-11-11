@@ -1,5 +1,6 @@
 import force
 import importer
+import networkx as nx
 import os
 import re
 import sys
@@ -9,21 +10,30 @@ JAN_NETWORK_FILE = './jans.xml'
 
 network = dict()
 
+keywords = [\
+('\sfor\s', 'for loop'),
+('\swhile\s', 'while loop'),
+('\sif\s', 'if statement')
+]
 
 def context_refiner(raw_context):
-    x = re.search('\sfor\s', raw_context)
-    return x
+    for (regex, nodename) in keywords:
+        if re.search(regex, raw_context):
+            return nodename
 
 
 def pkam():
     global network
     network, dictionary = importer.build_network(JAN_NETWORK_FILE)
 
-    x = context_refiner(sys.argv[1])
-    print(x)
+    searchvalue = context_refiner(sys.argv[1])
+    print(searchvalue)
 
-    if x != None:
-        network.node['for loop']['selected'] = '1' 
+    if searchvalue != None:
+        for node in list(nx.dfs_preorder_nodes(network, 'Language')):
+            print(node)
+            if node == searchvalue:
+                network.node[searchvalue]['selected'] = 1
 
     force.render_network(network)
 

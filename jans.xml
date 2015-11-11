@@ -38,4 +38,14 @@
       <value>https://docs.python.org/3.5/reference/compound_stmts.html#for</value>
       <related name="Langauge" />
   </jan>
+
+  <jan name="while loop" catagory="url">
+      <value>https://docs.python.org/3.5/reference/compound_stmts.html#while</value>
+      <related name="Langauge" />
+  </jan>
+
+  <jan name="if statement" catagory="url">
+      <value>https://docs.python.org/3.5/reference/compound_stmts.html#if</value>
+      <related name="Langauge" />
+  </jan>
 </network>
