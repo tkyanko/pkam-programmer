@@ -48,4 +48,9 @@
       <value>https://docs.python.org/3.5/reference/compound_stmts.html#if</value>
       <related name="Langauge" />
   </jan>
+
+  <jan name="threading module" catagory="url">
+      <value>https://docs.python.org/3/library/threading.html</value>
+      <related name="Langauge" />
+  </jan>
 </network>
